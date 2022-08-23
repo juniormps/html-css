@@ -1,14 +1,32 @@
 @charset "UTF-8";
 
+@font-face {
+	font-family: 'Passion One';
+	src: url('../fontes/passion-one/PassionOne-Regular.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'Sriracha';
+	src: url('../fontes/sriracha/Sriracha-Regular.ttf') format('truetype');
+}
+
+:root{
+	--fonte1: Verdana, Geneva, Tahoma, sans-serif;
+	--fonte2: 'Passion One';
+	--fonte3: 'Sriracha';
+}
+
 *{
 	margin: 0px;
 	padding: 0px;
+	font-size: 1em;
 }
 /*isto acima são configurações gerais*/
 
 html, body{
 	min-height: 100vh;
 	background-color: darkgrey;
+	font-family: var(--fonte1);
 }
 
 header{
@@ -20,6 +38,8 @@ header{
 header > h1{
 	padding-top: 50px;
 	font-variant: small-caps;
+	font-family: var(--fonte2);
+	font-size: 10vw; /*esta é uma maneira de tornar o título responsivo sem utilizar o Media Queries. O temanho do texto será 10% da largura da tela*/
 }
 
 header > p{
@@ -41,6 +61,9 @@ section{
 	padding-bottom: 10vh;
 	padding-left: 30px;
 	line-height: 2em; /*espaçamento entre linhas*/
+
+	font-family: var(--fonte3);
+	font-size: 3.5vw; /*seguindo o mesmo padrão do H1*/
 }
 
 .normal{
@@ -55,8 +78,8 @@ section{
 
 .imagem > p{
 	background-color: rgba(0, 0, 0, 0.342);
-	width: 400px
-	;
+	display: inline-block;
+	padding: 5px;
 }
 
 footer{
